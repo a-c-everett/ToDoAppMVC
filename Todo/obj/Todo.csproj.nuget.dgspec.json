@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj": {}
+    "c:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj": {
+    "c:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj",
+        "projectUniqueName": "c:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj",
         "projectName": "Todo",
-        "projectPath": "C:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj",
+        "projectPath": "c:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj",
         "packagesPath": "C:\\Users\\aceve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\obj\\",
+        "outputPath": "c:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aceve\\AppData\\Roaming\\NuGet\\NuGet.Config",

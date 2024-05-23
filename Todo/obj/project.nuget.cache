@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zbS+YXLNCNE=",
+  "dgSpecHash": "rWC41rQbbaA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj",
+  "projectFilePath": "c:\\Users\\aceve\\CSharpProjects\\ToDoAppMVC\\Todo\\Todo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aceve\\.nuget\\packages\\microsoft.data.sqlite\\8.0.5\\microsoft.data.sqlite.8.0.5.nupkg.sha512",
     "C:\\Users\\aceve\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.5\\microsoft.data.sqlite.core.8.0.5.nupkg.sha512",
