@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
 using Todo.Models;
+using Todo.Models.ViewModels;
 
 namespace Todo.Controllers;
 
@@ -16,7 +17,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var todoListViewModel = GetTodos();
+        return View(todoListViewModel);
     }
 
     public RedirectResult Insert(TodoItem todo)
@@ -38,6 +40,40 @@ public class HomeController : Controller
             }
         }
         return Redirect("http://localhost:5023/");
+    }
+
+    internal TodoViewModel GetTodos()
+    {
+        List<TodoItem> todoList = new();
+
+        using (SqliteConnection connection = new SqliteConnection("Data Source=db.sqlite"))
+        {
+            using (SqliteCommand command = connection.CreateCommand())
+            {
+                connection.Open();
+
+                command.CommandText = $"SELECT * FROM Todo";
+
+                using ( var reader = command.ExecuteReader() ){
+                    if (reader.HasRows){
+                        while (reader.Read()){
+                            todoList.Add(
+                                new TodoItem{
+                                    Id = reader.GetInt32(0),
+                                    Name = reader.GetString(1),
+                                }
+                            );
+                        }
+
+                    }
+                    return new TodoViewModel{
+                        TodoList = todoList
+                    };
+                    
+                }
+            }
+        }
+        
     }
 
 
