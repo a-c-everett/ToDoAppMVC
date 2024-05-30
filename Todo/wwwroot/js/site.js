@@ -2,3 +2,15 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+ function  deleteTodo(itemID){
+    $.ajax({ //ajax call with JQuery
+        url: 'Home/Delete',
+        type: 'POST',
+        data: {
+            id: itemID
+        },
+        success: function(){
+            window.location.reload();
+        }
+    });
+ }

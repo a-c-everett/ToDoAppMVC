@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Linq.Expressions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
 using Todo.Models;
@@ -74,6 +75,23 @@ public class HomeController : Controller
             }
         }
         
+    }
+
+    [HttpPost]
+    public JsonResult Delete(int id){
+        using(SqliteConnection connection = new SqliteConnection("Data Source = db.sqlite")){
+
+            using (SqliteCommand command = connection.CreateCommand()){
+
+                connection.Open();
+
+                command.CommandText = $"DELETE from Todo WHERE Id = '{id}'";
+                command.ExecuteNonQuery();
+
+            }
+        }
+        
+        return Json(new {});
     }
 
 

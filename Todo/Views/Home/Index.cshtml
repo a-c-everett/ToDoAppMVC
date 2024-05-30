@@ -11,7 +11,7 @@
                 <td class="todo-column">@t.Id</td>
                 <td class="todo-column">@t.Name</td>
                 <td class="buttons-column">
-                    <button class="delete-todo" onclick="DeleteTodo(@t.Id)">Delete</button>
+                    <input type="submit" class="delete-todo" value="Delete" onclick="deleteTodo(@t.Id)">
                 </td>
                 
             </tr>
