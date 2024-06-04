@@ -93,9 +93,62 @@ public class HomeController : Controller
         }
         
         return;
+    } 
+
+    public RedirectResult Update(TodoItem todo)
+    {   
+        using (SqliteConnection connection = new SqliteConnection("Data Source=db.sqlite"))
+        {
+            using (SqliteCommand command = connection.CreateCommand())
+            {
+                connection.Open();
+
+                command.CommandText = $"UPDATE Todo SET Name = '{todo.Name}' WHERE Id = '{todo.Id}'";
+
+                try{
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex){
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+        }
+        return Redirect("http://localhost:5023/");
+    }
+
+    [HttpGet]
+    public JsonResult PopulateForm(int id){
+        var todo =  GetById(id);
+        return Json(todo);
+    }
+    
+    internal TodoItem GetById(int id)
+    {
+        TodoItem todo = new();
+
+        using (SqliteConnection connection = new SqliteConnection("Data Source=db.sqlite"))
+        {
+            using (SqliteCommand command = connection.CreateCommand())
+            {
+                connection.Open();
+
+                command.CommandText = $"SELECT * FROM Todo WHERE Id = '{id}'";
+
+                using ( var reader = command.ExecuteReader() ){
+                    if (reader.HasRows){
+                        reader.Read();
+                        todo.Id = reader.GetInt32(0);
+                        todo.Name = reader.GetString(1);
+                    }
+                    
+                    
+                }
+            }
+        }
+
+        return todo;
+        
     }
 
 
-    
-    
 }
