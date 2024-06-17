@@ -23,9 +23,8 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                     </ul>
-                    <input class="nav-link" type="submit" asp-area="" asp-controller="Login" asp-action="Index" value="Login" onclick="displayLogin()">
+                    <input class="nav-link" id="login-button" type="submit" asp-area="" asp-controller="Login" asp-action="Index" value="Login" onclick="displayLogin()">
                 </div>
-                
             </div>
         </nav>
     </header>
@@ -34,7 +33,17 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        <div class="invisible" id="login-container">
+            <div class="d-flex justify-content-center">
+                @Html.Partial("_LoginForm")
+            </div>
+        </div>
+        
     </div>
+    
+        
+        
+    
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

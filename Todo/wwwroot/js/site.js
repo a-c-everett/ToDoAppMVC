@@ -33,5 +33,5 @@
  }
 
  function displayLogin(){
-    alert("button works!");
+    $("#login-container").removeClass("invisible").addClass("visible");
  }
