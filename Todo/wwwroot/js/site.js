@@ -31,3 +31,7 @@
         }
     })
  }
+
+ function displayLogin(){
+    alert("button works!");
+ }
